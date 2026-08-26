@@ -1,0 +1,13 @@
+name = "LazyKernels"
+uuid = "d7b342b0-9d6c-42b3-bd50-d2bc6fd377cd"
+authors = ["Trevor Loe <trevorgloe@gmail.com> and contributors"]
+version = "1.0.0-DEV"
+
+[compat]
+julia = "1.12"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
