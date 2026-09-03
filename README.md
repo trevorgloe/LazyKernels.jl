@@ -9,7 +9,7 @@ A julia package to easily implement lazily evaluated, non-allocating kernel matr
 - [ ] Add symmetric variant so only one set of points is stored
 - [ ] Test with KernelFunctions.jl to see if we can get compatability
 - [ ] Add batched matrix multiply and move low level kernels to ExecutionPlan.jl
-- [ ] Add tests
+- [x] Add tests
 
 ## TO DO (further down the road)
 - [ ] Sparse approximation methods
