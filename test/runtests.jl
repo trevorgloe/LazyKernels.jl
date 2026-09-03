@@ -17,7 +17,7 @@ using LinearAlgebra
         θ = (1.0f0, 1.0f0)
         Ker = KernelOperator(RBF, θ)
         back = CPU()
-        plan = ExecutionPlan(back, 64)
+        plan = DirectExecutionPlan(back, 64)
         K = LazyKernelMatrix(X, Y, Ker, plan)
         v = randn(Float32, n)
         y = zeros(Float32, n)
@@ -28,12 +28,12 @@ using LinearAlgebra
                 end
         end
         testy = zeros(Float32, n)
-        apply!(y, K, v) # lazy kernel
+        mul!(y, K, v) # lazy kernel
         mul!(testy, testK, v) # dense kernel
         @test maximum(abs.(y - testy)) < 1e-3
 
         vbad = randn(Float32, n + 1)
         ybad = zeros(Float32, n + 1)
-        @test_throws ArgumentError apply!(y, K, vbad)
-        @test_throws ArgumentError apply!(ybad, K, v)
+        @test_throws ArgumentError mul!(y, K, vbad)
+        @test_throws ArgumentError mul!(ybad, K, v)
 end
