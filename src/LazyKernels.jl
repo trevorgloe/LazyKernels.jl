@@ -2,6 +2,7 @@ module LazyKernels
 include("KernelOperator.jl")
 include("ExecutionPlan.jl")
 using KernelAbstractions
+import LinearAlgebra: mul!
 
 struct LazyKernelMatrix{T,Ke} <: AbstractMatrix{T}
     X::AbstractArray{T} # X points
@@ -41,6 +42,12 @@ function apply!(y::AbstractVector, K::LazyKernelMatrix, v::AbstractVector)
     kernel! = mulker!(K.Plan.backend, K.Plan.workgroup_n)
     kernel!(y, K.Ker, K.X, K.Y, v; ndrange=length(y))
     synchronize(K.Plan.backend)
+end
+
+function mul!(y::AbstractVector, K::LazyKernelMatrix, v::AbstractVector)
+    # just feed through to apply! method
+    apply!(y, K, v)
+    return y
 end
 
 export LazyKernelMatrix
