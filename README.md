@@ -5,7 +5,7 @@
 A julia package to easily implement lazily evaluated, non-allocating kernel matrices on the GPU/CPU through a platform-agnostic interface.
 
 ## TO DO
-- [ ] Overload regular linear algebra `mul!` and test with Krylov.jl
+- [x] Overload regular linear algebra `mul!` and test with Krylov.jl
 - [ ] Add symmetric variant so only one set of points is stored
 - [ ] Test with KernelFunctions.jl to see if we can get compatability
 - [ ] Add batched matrix multiply and move low level kernels to ExecutionPlan.jl
