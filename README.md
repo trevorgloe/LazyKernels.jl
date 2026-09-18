@@ -17,3 +17,4 @@ A julia package to easily implement lazily evaluated, non-allocating kernel matr
     - [ ] Nystrom approximation (possibly integrate with RPCholseky.jl or AcceleratedRPCholseky.jl)
 - [ ] Log determinant calculation
 - [ ] $tr(A^{-1}B)$ calculation
+- [ ] Preconditioning methods for Krylov algorithms
