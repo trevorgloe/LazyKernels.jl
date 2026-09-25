@@ -37,5 +37,5 @@ end
 
 export LazyKernelMatrix
 export apply!
-export KernelOperator, DirectExecutionPlan
+export KernelOperator, DirectExecutionPlan, BlockedExecutionPlan
 end
