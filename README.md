@@ -8,7 +8,7 @@ A julia package to easily implement lazily evaluated, non-allocating kernel matr
 - [x] Overload regular linear algebra `mul!` and test with Krylov.jl
 - [ ] Add symmetric variant so only one set of points is stored
 - [ ] Test with KernelFunctions.jl to see if we can get compatability
-- [ ] Add batched matrix multiply and move low level kernels to ExecutionPlan.jl
+- [x] Add batched matrix multiply and move low level kernels to ExecutionPlan.jl
 - [x] Add tests
 
 ## TO DO (further down the road)
@@ -18,3 +18,4 @@ A julia package to easily implement lazily evaluated, non-allocating kernel matr
 - [ ] Log determinant calculation
 - [ ] $tr(A^{-1}B)$ calculation
 - [ ] Preconditioning methods for Krylov algorithms
+- [ ] Sparse threshold approximation
